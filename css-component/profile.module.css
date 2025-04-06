@@ -1,0 +1,127 @@
+.container {
+  background-color: #000000; /* 배경색을 검정으로 설정 */
+  color: #ffffff; /* 텍스트 색상을 흰색으로 설정 */
+  min-height: 100vh; /* 화면 전체 높이 */
+  display: flex; /* 플렉스 박스 사용 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  padding: 20px; /* 내부 여백 */
+}
+
+.sidebar {
+  position: fixed; /* 고정 위치 */
+  left: 0; /* 왼쪽에 고정 */
+  top: 0; /* 위쪽에 고정 */
+  height: 100%; /* 화면 전체 높이 */
+  width: 240px; /* 너비 설정 */
+  background-color: #1a1919; /* 사이드바 배경색 */
+  padding: 20px; /* 내부 여백 */
+}
+
+.sidebar a {
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 중앙 정렬 */
+  color: #ffffff; /* 링크 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  margin: 15px 0; /* 위아래 간격 */
+  font-size: 1rem; /* 글자 크기 */
+}
+
+.sidebar a img {
+  margin-right: 10px; /* 이미지와 텍스트 간격 */
+  width: 20px; /* 아이콘 너비 */
+  height: 20px; /* 아이콘 높이 */
+}
+
+.profile-header {
+  margin-left: 260px; /* 사이드바와의 간격 */
+  margin-top: 40px; /* 위쪽 간격 */
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 중앙 정렬 */
+}
+
+.profile-header img {
+  width: 80px !important; /* 프로필 이미지 너비 */
+  height: 80px !important; /* 프로필 이미지 높이 */
+  border-radius: 50%; /* 원형 이미지 */
+  margin-right: 30px; /* 이미지와 텍스트 간격 */
+}
+
+.profile-header-info {
+  display: flex; /* 플렉스 박스 사용 */
+  flex-direction: column; /* 세로 방향 정렬 */
+}
+
+.profile-header-info h1 {
+  font-size: 1.8rem; /* 제목 글자 크기 */
+  margin-bottom: 10px; /* 아래쪽 간격 */
+}
+
+.profile-header-info button {
+  background-color: #1a1919; /* 버튼 배경색 */
+  color: #ffffff; /* 버튼 텍스트 색상 */
+  border: 1px solid #ffffff; /* 버튼 테두리 */
+  padding: 5px 15px; /* 내부 여백 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 마우스 커서 변경 */
+  margin-bottom: 10px; /* 아래쪽 간격 */
+}
+
+.profile-header-info span {
+  font-size: 1rem; /* 텍스트 크기 */
+  margin-bottom: 5px; /* 아래쪽 간격 */
+}
+
+.grid {
+  margin-left: 260px; /* 사이드바와의 간격 */
+  margin-top: 40px; /* 위쪽 간격 */
+  display: grid; /* 그리드 레이아웃 사용 */
+  grid-template-columns: repeat(3, 1fr); /* 3열 구성 */
+  gap: 20px; /* 게시물 간의 간격 */
+}
+
+.grid-item {
+  position: relative; /* 자식 요소 위치 기준 */
+  background-color: #333333; /* 게시물 배경색 */
+  aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+  overflow: hidden; /* 넘치는 내용 숨기기 */
+}
+
+.grid-item img {
+  width: 100%; /* 이미지 너비 */
+  height: 100%; /* 이미지 높이 */
+  object-fit: cover; /* 이미지 크기 조정 */
+  object-position: center; /* 이미지 중심 정렬 */
+}
+
+.overlay {
+  position: absolute; /* 부모 요소 기준 위치 */
+  top: 0; /* 위쪽 고정 */
+  left: 0; /* 왼쪽 고정 */
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 배경 */
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  opacity: 0; /* 기본 투명도 */
+  transition: opacity 0.3s ease; /* 투명도 전환 효과 */
+}
+
+.grid-item:hover .overlay {
+  opacity: 1; /* 마우스 오버 시 투명도 변경 */
+}
+
+.overlay span {
+  color: #ffffff; /* 텍스트 색상 */
+  font-size: 1rem; /* 텍스트 크기 */
+  margin: 0 10px; /* 좌우 간격 */
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 중앙 정렬 */
+}
+
+.overlay span img {
+  width: 20px; /* 아이콘 너비 */
+  height: 20px; /* 아이콘 높이 */
+  margin-right: 5px; /* 아이콘과 텍스트 간격 */
+}
